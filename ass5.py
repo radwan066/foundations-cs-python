@@ -14,7 +14,13 @@ def selectionSort(list1):
  
  print(list1)
 
+def sum(list1):
+  sum=0
+  for i in list1:
+    sum+=i
+  print(sum)  
 list1=['aA', 'b', 'BD', 'Bc','D']
+list2=[2,3,4,-5,6]
 selectionSort(list1)
-
+sum(list2)
 
