@@ -20,28 +20,28 @@ selectionSort(list1)
 
 
 
-def mergeSort(list1,start,end): #O(n log n)
+def mergeSort(list1,start,end): 
   # base case
-  if start==end: #I have a list of length 1
+  if start==end: 
     return
-  mid=(start+end)//2 #binary search
-  mergeSort(list1,start,mid) # dividing the list further
+  mid=(start+end)//2 
+  mergeSort(list1,start,mid)
   mergeSort(list1,mid+1,end)
-  merge(list1,start,mid,end) # I am passing the division of the list
+  merge(list1,start,mid,end) 
 
-def merge(list1,start,mid,end): # to merge the two sublists into a sorted one, O(n), n being the length of the list
+def merge(list1,start,mid,end): 
   new_list=[]
-  ind1=start # this points to the start of the first sub-list
-  ind2=mid+1 # this points to the start of the second sub-list
+  ind1=start 
+  ind2=mid+1 
 
-  while ind1<=mid and ind2<=end: # I have elements in both sublists
+  while ind1<=mid and ind2<=end: 
     if list1[ind1]>list1[ind2]:
       new_list.append(list1[ind1])
       ind1+=1
-    else: # the element in my second sublist is smaller
+    else: 
       new_list.append(list1[ind2])
       ind2+=1
-  # this means that the elements of sublist 1 OR sublist 2 are complete
+ 
 
   while ind1<=mid:
     new_list.append(list1[ind1])
@@ -51,11 +51,11 @@ def merge(list1,start,mid,end): # to merge the two sublists into a sorted one, O
     new_list.append(list1[ind2])
     ind2+=1
 
-  # I finished copying all the elements
-  #new_list contains the same elements as list1 but in an ordered way
+  
   list1[start:end+1]=new_list
 
 
 list1=[3,5,1,8,-10]
 mergeSort(list1,0,len(list1)-1)
+print(list1)
 print(list1)
