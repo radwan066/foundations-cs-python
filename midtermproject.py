@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 openedtabs=[]
 
 
@@ -52,3 +53,6 @@ def mainmenu():
         else :
             print("Please enter a valid number!")      
 mainmenu()
+=======
+
+>>>>>>> 150a8acb9e876a8cef4af09b1c9f845c86f9cf20
