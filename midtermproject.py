@@ -19,7 +19,7 @@ def Open_Tab():   #asking the user for the title and the url of the  website
       Open_Tab()     
     print(openedtabs)   
      
-def Close_Tab(openedtabs):  #first printing the list of the opened tabs than asking user for the index of the tab he wishes to close it 
+def Close_Tab():  #first printing the list of the opened tabs than asking user for the index of the tab he wishes to close it 
     print(openedtabs)
     index=(input("please,enter the index of the tabs you want to close:"))  
     if openedtabs[index] in openedtabs:   #searching for the index given by the user
@@ -28,14 +28,23 @@ def Close_Tab(openedtabs):  #first printing the list of the opened tabs than ask
         openedtabs.pop()    
     print(openedtabs)
 
-def Switch_Tabs():
+def Switch_Tabs(): #first printing the list of the opened tabs than asking the user for the index of the tab in which he would see its content
     print(openedtabs)
     index=int(input("please,enter the index of the tabs you want to display its content:"))
-    if openedtabs[index] in openedtabs:
-        r=requests.get(openedtabs[index]['url'])
+    if openedtabs[index] in openedtabs:   #searching for the index given by the user
+        r=requests.get(openedtabs[index]['url'])      #send a request to get the content from the url, resources:youtube,w3schools,geeksforgeeks
+        if (r.status_code==200):                      #checking if the request is accepted
+         print(r.text)
+    else :
+        r=requests.get(openedtabs[len(openedtabs)-1]['url'])    
         if (r.status_code==200):
          print(r.text)
+
+def Display_All_Tabs(openedtabs):
+    for i in openedtabs:
+        print(i.get('title'))
         
+
 
 def mainmenu():
     choice=0
@@ -53,11 +62,11 @@ def mainmenu():
         if (choice==1):
             Open_Tab()
         elif (choice==2):
-            Close_Tab(openedtabs)
+            Close_Tab()
         elif (choice==3):
             Switch_Tabs() 
         elif (choice==4):
-            Display_All_Tabs()
+            Display_All_Tabs(openedtabs)
         elif(choice==5):
             Open_Nested_Tabs()
         elif(choice==6):
