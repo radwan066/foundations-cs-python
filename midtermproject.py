@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 openedtabs=[]
 
 
 def Open_Tab():   #asking the user for the title and the url of the  website
     title=input("please enter the title of the tab:")
-    while title:
-     if  title.isalnum(): #checking if title contains only alphabetics and numerical characters 
+    if title and  title.isalnum(): #checking if title contains only alphabetics and numerical characters 
        url=input("please enter the URL:")
        if url and url.startswith(("www.","http:")): #checking if the url starts with www. or http 
          tabs={"title":title,"url":url}
@@ -18,6 +16,14 @@ def Open_Tab():   #asking the user for the title and the url of the  website
       Open_Tab()     
     print(openedtabs)   
      
+def Close_Tab():
+    print(openedtabs)
+    index=int(input("please,enter the index of the tabs you want to close:"))
+    if openedtabs[index] in openedtabs:
+        openedtabs.remove(openedtabs[index])
+    else :
+        openedtabs.pop()    
+    print(openedtabs)
 
 def mainmenu():
     choice=0
@@ -53,6 +59,3 @@ def mainmenu():
         else :
             print("Please enter a valid number!")      
 mainmenu()
-=======
-
->>>>>>> 150a8acb9e876a8cef4af09b1c9f845c86f9cf20
