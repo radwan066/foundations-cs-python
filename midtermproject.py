@@ -1,3 +1,22 @@
+openedtabs=[]
+
+
+def Open_Tab():
+    title=input("please enter the title of the tab:")
+    if title and title.isalnum():
+       url=input("please enter the URL:")
+       if url and url.startswith(("www.","https:")):
+         tabs={"title":title,"url":url}
+         openedtabs.append(tabs)
+       else :
+          url=input("please enter the URL again:")
+          Open_Tab()
+    else :      
+      print("please input a valid Title!")
+      Open_Tab()     
+    print(openedtabs)   
+     
+
 def mainmenu():
     choice=0
     while (choice!=9):
@@ -10,7 +29,7 @@ def mainmenu():
         print("7.Save Tabs.")
         print("8.Import Tabs.")
         print("9.Exit")
-        choice=(input("Please enter a number(1->9):"))
+        choice=int(input("Please enter a number(1->9):"))
         if (choice==1):
             Open_Tab()
         elif (choice==2):
