@@ -57,6 +57,19 @@ def Open_Nested_Tabs(openedtabs):
             print("please input a valid Title!")
             Open_Nested_Tabs(openedtabs)           
 
+def Sort_All_Tabs(openedtabs):
+    border=0
+    while border<len(openedtabs)-1:
+      minindex=border
+      for i in range (border+1,len(openedtabs)):  
+        if openedtabs[i]['title']<openedtabs[minindex]['title']:
+            minindex=i
+      temp=openedtabs[border]
+      openedtabs[border]=openedtabs[minindex]
+      openedtabs[minindex]=temp
+      border+=1
+    print(openedtabs)        
+
 def mainmenu():
     choice=0
     while (choice!=9):
@@ -81,7 +94,7 @@ def mainmenu():
         elif(choice==5):
             Open_Nested_Tabs(openedtabs)
         elif(choice==6):
-            Sort_All_Tabs()
+            Sort_All_Tabs(openedtabs)
         elif(choice==7):
             Save_Tabs()
         elif(choice==8):
