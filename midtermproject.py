@@ -89,7 +89,7 @@ def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs a
 def Save_Tabs(openedtabs):
      file_path=input("enter the file path:")
      with open(file_path, 'w') as f:
-         json.dump(openedtabs,f)
+         json.dump(openedtabs,f)     #just calling json to save the path given by the user
          print(f"saved path into {file_path}")
 
 def Import_Tabs(openedtabs):
