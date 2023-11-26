@@ -21,12 +21,16 @@ def Open_Tab():   #asking the user for the title and the url of the  website
     print(openedtabs)   
      
 def Close_Tab():  #first printing the list of the opened tabs than asking user for the index of the tab he wishes to close it 
-    print(openedtabs)
-    index=(input("please,enter the index of the tabs you want to close:"))  
-    if openedtabs[index] in openedtabs:   #searching for the index given by the user
+    y=(input("please,enter the index of the tabs you want to close:"))  
+    if y.isdigit():
+      index=int(y)
+      if openedtabs[index] in openedtabs:   #searching for the index given by the user
         openedtabs.remove(openedtabs[index])
-    else :                                #if the index is not in the list or its invalid the program will close the last opened tab
-        openedtabs.pop()    
+      else :                                #if the index is not in the list or its invalid the program will close the last opened tab
+        openedtabs.pop()  
+    else :
+        print("you have to give us the index as integer!")  
+        Close_Tab()    
     print(openedtabs)
 
 def Switch_Tabs(): #first printing the list of the opened tabs than asking the user for the index of the tab in which he would see its content
