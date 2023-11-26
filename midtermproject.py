@@ -95,8 +95,8 @@ def Save_Tabs(openedtabs):
 def Import_Tabs(openedtabs):
     file_path=input("enter the file path:")
     with open(file_path) as p:
-        read=json.load(p)
-        print(read)
+        read=json.load(p)   #loading the file
+        print(read)         #printing the content
 def mainmenu():
     choice=0
     while (choice!=9):
