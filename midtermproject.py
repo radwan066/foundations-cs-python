@@ -33,7 +33,7 @@ def Close_Tab():  #first printing the list of the opened tabs than asking user f
         Close_Tab()    
     print(openedtabs)
 
-def Switch_Tabs(): #first printing the list of the opened tabs than asking the user for the index of the tab in which he would see its content
+def Switch_Tabs(): #first printing the list of the opened tabs than asking the user for the index of the tab in which he would see its content O(n^2)
     print(openedtabs)
     x=(input("please,enter the index of the tabs you want to display its content:"))
     if x.isdigit():
@@ -50,11 +50,11 @@ def Switch_Tabs(): #first printing the list of the opened tabs than asking the u
        print("please you have to give us the index as integer")
        Switch_Tabs()     
 
-def Display_All_Tabs(openedtabs): #searching for title in openedtabs and displaying it,i didn't know how to figure out the nested titles
+def Display_All_Tabs(openedtabs): #searching for title in openedtabs and displaying it,i didn't know how to figure out the nested titles O(n) 
     for i in openedtabs:
         print(i.get('title'))
           
-def Open_Nested_Tabs(openedtabs): 
+def Open_Nested_Tabs(openedtabs):  #O(n^3)
     y=(input("please enter the index of the parent tab:"))
     if y.isdigit():
      index=int(y)  
@@ -73,7 +73,7 @@ def Open_Nested_Tabs(openedtabs):
        print("please give us the index as integer")
        Open_Nested_Tabs()                 
 
-def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs alphabetically 
+def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs alphabetically O(n^2)
     border=0
     while border<len(openedtabs)-1:
       minindex=border  #index of the minimum element
@@ -86,13 +86,13 @@ def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs a
       border+=1
     print(openedtabs)        
 
-def Save_Tabs(openedtabs):
+def Save_Tabs(openedtabs): #O(1)
      file_path=input("enter the file path:")
      with open(file_path, 'w') as f:
          json.dump(openedtabs,f)     #just calling json to save the path given by the user
          print(f"saved path into {file_path}")
 
-def Import_Tabs(openedtabs):
+def Import_Tabs(openedtabs): #O(1)
     file_path=input("enter the file path:")
     with open(file_path) as p:
         read=json.load(p)   #loading the file
