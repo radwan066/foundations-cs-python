@@ -73,14 +73,14 @@ def Open_Nested_Tabs(openedtabs):
        print("please give us the index as integer")
        Open_Nested_Tabs()                 
 
-def Sort_All_Tabs(openedtabs):
+def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs alphabetically 
     border=0
     while border<len(openedtabs)-1:
-      minindex=border
+      minindex=border  #index of the minimum element
       for i in range (border+1,len(openedtabs)):  
         if openedtabs[i]['title']<openedtabs[minindex]['title']:
             minindex=i
-      temp=openedtabs[border]
+      temp=openedtabs[border]  #swap the two elements
       openedtabs[border]=openedtabs[minindex]
       openedtabs[minindex]=temp
       border+=1
