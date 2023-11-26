@@ -50,13 +50,15 @@ def Switch_Tabs(): #first printing the list of the opened tabs than asking the u
        print("please you have to give us the index as integer")
        Switch_Tabs()     
 
-def Display_All_Tabs(openedtabs):
+def Display_All_Tabs(openedtabs): #searching for title in openedtabs and displaying it,i didn't know how to figure out the nested titles
     for i in openedtabs:
         print(i.get('title'))
-        
-def Open_Nested_Tabs(openedtabs):
-    index=int(input("please enter the index of the parent tab:"))
-    for index in openedtabs:
+          
+def Open_Nested_Tabs(openedtabs): 
+    y=(input("please enter the index of the parent tab:"))
+    if y.isdigit():
+     index=int(y)  
+     for index in openedtabs:
         title=input("give us the title of the tab:")
         if title and title.isalnum():
             url=input("please enter the URL:")
@@ -66,7 +68,10 @@ def Open_Nested_Tabs(openedtabs):
                 url=input("please enter the url again:") 
         else :
             print("please input a valid Title!")
-            Open_Nested_Tabs(openedtabs)           
+            Open_Nested_Tabs(openedtabs)  
+    else :
+       print("please give us the index as integer")
+       Open_Nested_Tabs()                 
 
 def Sort_All_Tabs(openedtabs):
     border=0
