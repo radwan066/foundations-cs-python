@@ -58,7 +58,7 @@ def Open_Nested_Tabs(openedtabs):
     y=(input("please enter the index of the parent tab:"))
     if y.isdigit():
      index=int(y)  
-     for index in openedtabs:
+     for index in openedtabs: #creating another dictionary in the index of the dictionary given by the user
         title=input("give us the title of the tab:")
         if title and title.isalnum():
             url=input("please enter the URL:")
