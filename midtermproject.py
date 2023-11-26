@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import json
 
 openedtabs=[]
 
@@ -70,6 +71,11 @@ def Sort_All_Tabs(openedtabs):
       border+=1
     print(openedtabs)        
 
+def Save_Tabs(openedtabs):
+     file_path=input("enter the file path:")
+     with open(file_path, 'w') as f:
+         json.dump(openedtabs,f)
+         print(f"saved path into {file_path}")
 def mainmenu():
     choice=0
     while (choice!=9):
@@ -96,7 +102,7 @@ def mainmenu():
         elif(choice==6):
             Sort_All_Tabs(openedtabs)
         elif(choice==7):
-            Save_Tabs()
+            Save_Tabs(openedtabs)
         elif(choice==8):
             Import_Tabs()
         elif(choice==9):
