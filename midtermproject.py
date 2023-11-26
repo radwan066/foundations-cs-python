@@ -4,11 +4,11 @@ import json
 
 openedtabs=[]
 
-def Open_Tab():   #asking the user for the title and the url of the  website
+def Open_Tab():   #asking the user for the title and the url of the  website O(n) n:invalid title
     title=input("please enter the title of the tab:")
-    while title and  title.isalnum(): #checking if title contains only alphabetics and numerical characters 
+    while title and  title.isalnum(): #checking if title contains only alphabetics and numerical characters #O(n) n being the invalid title given by the user 
        url=input("please enter the URL:")
-       while url and url.startswith(('www.','http:','https:')):
+       while url and url.startswith(('www.','http:','https:')):    #O(1) giving two chances to the user to give a valid url 
             tabs={"title":title,"url":url}
             openedtabs.append(tabs)
             break
@@ -20,7 +20,7 @@ def Open_Tab():   #asking the user for the title and the url of the  website
       Open_Tab()     
     print(openedtabs)   
      
-def Close_Tab():  #first printing the list of the opened tabs than asking user for the index of the tab he wishes to close it 
+def Close_Tab():  #first printing the list of the opened tabs than asking user for the index of the tab he wishes to close it #O(n) n:wrong index from the user
     y=(input("please,enter the index of the tabs you want to close:"))  
     if y.isdigit():
       index=int(y)
