@@ -99,7 +99,7 @@ def Import_Tabs(openedtabs):
         print(read)         #printing the content
 def mainmenu():
     choice=0
-    while (choice!=9):
+    while (choice!=9):     #O(n) n being the number of invalid values given by the user 
         print("1.Open Tab.")
         print("2.Close Tab.")
         print("3.Switch Tabs.")
