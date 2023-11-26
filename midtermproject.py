@@ -4,16 +4,17 @@ import json
 
 openedtabs=[]
 
-
 def Open_Tab():   #asking the user for the title and the url of the  website
     title=input("please enter the title of the tab:")
-    if title and  title.isalnum(): #checking if title contains only alphabetics and numerical characters 
+    while title and  title.isalnum(): #checking if title contains only alphabetics and numerical characters 
        url=input("please enter the URL:")
-       if url and url.startswith(("www.","http:","https:")): #checking if the url starts with www. or http 
-         tabs={"title":title,"url":url}
-         openedtabs.append(tabs)
+       while url and url.startswith(('www.','http:','https:')):
+            tabs={"title":title,"url":url}
+            openedtabs.append(tabs)
+            break
        else :
-          url=input("please enter the URL again:")
+          url=input("please enter the url again or it won't be opened:")  
+       break          
     else :      
       print("please input a valid Title!")
       Open_Tab()     
