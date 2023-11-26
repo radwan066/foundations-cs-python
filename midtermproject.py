@@ -76,6 +76,12 @@ def Save_Tabs(openedtabs):
      with open(file_path, 'w') as f:
          json.dump(openedtabs,f)
          print(f"saved path into {file_path}")
+
+def Import_Tabs(openedtabs):
+    file_path=input("enter the file path:")
+    with open(file_path) as p:
+        read=json.load(p)
+        print(read)
 def mainmenu():
     choice=0
     while (choice!=9):
@@ -104,7 +110,7 @@ def mainmenu():
         elif(choice==7):
             Save_Tabs(openedtabs)
         elif(choice==8):
-            Import_Tabs()
+            Import_Tabs(openedtabs)
         elif(choice==9):
             print("Bye Bye!")
         else :
