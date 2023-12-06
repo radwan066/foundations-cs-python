@@ -50,6 +50,7 @@ def Switch_Tabs(): #first printing the list of the opened tabs than asking the u
        print("please you have to give us the index as integer")
        Switch_Tabs()     
 
+<<<<<<< HEAD
 def Display_All_Tabs(openedtabs): #searching for title in openedtabs and displaying it,i didn't know how to figure out the nested titles #O(n)n:length of openedtabs
     for i in openedtabs:    
         print(i.get('title'))
@@ -57,6 +58,15 @@ def Display_All_Tabs(openedtabs): #searching for title in openedtabs and display
 def Open_Nested_Tabs(openedtabs):    #O(n^3)
     y=(input("please enter the index of the parent tab:"))   
     if y.isdigit():    #O(n) n:number of invalid inputs
+=======
+def Display_All_Tabs(openedtabs): #searching for title in openedtabs and displaying it,i didn't know how to figure out the nested titles O(n) 
+    for i in openedtabs:
+        print(i.get('title'))
+          
+def Open_Nested_Tabs(openedtabs):  #O(n^3)
+    y=(input("please enter the index of the parent tab:"))
+    if y.isdigit():
+>>>>>>> 4cefcd58c676fa84227e92e368ee84a854e99758
      index=int(y)  
      for index in openedtabs: #creating another dictionary in the index of the dictionary given by the user  O(n) n:length of openedtabs
         title=input("give us the title of the tab:")
@@ -73,7 +83,11 @@ def Open_Nested_Tabs(openedtabs):    #O(n^3)
        print("please give us the index as integer")
        Open_Nested_Tabs()                 
 
+<<<<<<< HEAD
 def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs alphabetically #O(n^2)
+=======
+def Sort_All_Tabs(openedtabs):  #using selection method to sort the openedtabs alphabetically O(n^2)
+>>>>>>> 4cefcd58c676fa84227e92e368ee84a854e99758
     border=0
     while border<len(openedtabs)-1:  #O(n) n:being the length of the list
       minindex=border  #index of the minimum element
